@@ -22,4 +22,8 @@ public class LibraryBook {
     public void setCheckedOut(boolean checkedOut) {
         this.checkedOut = checkedOut;
     }
+
+    public boolean equalsBookTitleWithGivenTitle(String title){
+        return this.title == title;
+    }
 }
