@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/twu-biblioteca-yanina.iml" filepath="$PROJECT_DIR$/.idea/twu-biblioteca-yanina.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twu-biblioteca-yanina.iml" filepath="$PROJECT_DIR$/twu-biblioteca-yanina.iml" />
     </modules>
   </component>
 </project>
