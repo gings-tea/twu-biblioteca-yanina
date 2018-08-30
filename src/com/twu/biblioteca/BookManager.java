@@ -31,7 +31,7 @@ public class BookManager {
         return false;
     }
 
-    private LibraryBook getBook(String title){
+    public LibraryBook getBook(String title){
         Iterator it = libraryBookCollection.iterator();
         while( it.hasNext() ){
             LibraryBook book = (LibraryBook) it.next();
