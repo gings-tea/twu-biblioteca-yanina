@@ -24,7 +24,7 @@ public class BookManager {
         libraryBookCollection.put(libraryBook, availability);
     }
 
-    public void getAvailabilityBookDetails() {
+    public void getAvailableBookDetails() {
         Set<LibraryBook> keys = libraryBookCollection.keySet();
         for(LibraryBook key: keys){
             if(isBookInAvailable(key)){
