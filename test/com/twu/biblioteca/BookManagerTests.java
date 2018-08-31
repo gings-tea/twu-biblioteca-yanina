@@ -10,20 +10,21 @@ public class BookManagerTests {
     @Before
     public void beforeTest(){
         mockBookManager = new BookManager();
-        mockBookManager.addBook(new LibraryBook("TDD", "Kent Beck", 2003, false));
+        mockBookManager.addBook(new LibraryBook("TDD", "Kent Beck", 2003),true);
     }
 
     @Test
-    public void getBookByTitleShouldReturnFalse() {
+    public void isBookAvailableShouldReturnTrue() {
+        LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
 
-        assertEquals(false, mockBookManager.isBookInLibrary("TDB"));
+        assertEquals(true, mockBookManager.isBookInAvailable(libraryBook));
     }
 
     @Test
-    public void checkOutBookShouldBeTrue(){
-        mockBookManager.changeCheckOutState("TDD", true);
-        LibraryBook mockBook = mockBookManager.getBook("TDD");
-        assertEquals(true, mockBook.isCheckedOut());
+    public void checkedOutBookShouldNotBeAvailable(){
+        LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
+        mockBookManager.changeAvailability(libraryBook, false);
+        assertEquals(false, mockBookManager.isBookInAvailable(libraryBook));
     }
 
 

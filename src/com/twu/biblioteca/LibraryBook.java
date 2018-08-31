@@ -5,25 +5,22 @@ public class LibraryBook {
     private String title;
     private String author;
     private int yearPublished;
-    private boolean checkedOut;
 
-    public LibraryBook(String title, String author, int yearPublished, boolean checkedOut) {
+    public LibraryBook(String title, String author, int yearPublished) {
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
-        this.checkedOut = checkedOut;
     }
 
 
-    public boolean isCheckedOut() {
-        return checkedOut;
+    public boolean equals(Object otherBook){
+        LibraryBook libraryBook = (LibraryBook) otherBook;
+        return this.title.equals(libraryBook.title)  &&
+                this.yearPublished == libraryBook.yearPublished &&
+                this.author.equals(libraryBook.author) ;
     }
 
-    public void setCheckedOut(boolean checkedOut) {
-        this.checkedOut = checkedOut;
-    }
-
-    public boolean equalsBookTitleWithGivenTitle(String title){
-        return this.title == title;
+    public int hashCode() {
+        return 0;
     }
 }

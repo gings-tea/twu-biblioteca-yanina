@@ -1,44 +1,26 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Hashtable;
 
 public class BookManager {
 
-    private ArrayList<LibraryBook> libraryBookCollection;
+    private Hashtable<LibraryBook, Boolean> libraryBookCollection;
 
     public BookManager() {
-        this.libraryBookCollection = new ArrayList<>();
+        this.libraryBookCollection = new Hashtable<>();
     }
 
-    public void addBook( LibraryBook mock_book ) {
-        libraryBookCollection.add(mock_book);
+    public void addBook( LibraryBook libraryBook , boolean availability) {
+        libraryBookCollection.put(libraryBook, availability);
     }
 
-    public boolean isBookInLibrary(String title) {
-        return getBook(title) != null;
+    public boolean isBookInAvailable(LibraryBook libraryBook) {
+        return libraryBookCollection.get(libraryBook);
     }
 
 
-    public boolean changeCheckOutState(String title, boolean checkedOut) {
-        if(isBookInLibrary(title)) {
-            LibraryBook book = getBook(title);
-            libraryBookCollection.remove(book);
-            book.setCheckedOut(checkedOut);
-            libraryBookCollection.add(book);
-            return true;
-        }
-        return false;
+    public void changeAvailability(LibraryBook libraryBook, boolean availability) {
+        libraryBookCollection.put(libraryBook, availability);
     }
 
-    public LibraryBook getBook(String title){
-        Iterator it = libraryBookCollection.iterator();
-        while( it.hasNext() ){
-            LibraryBook book = (LibraryBook) it.next();
-            if( book.equalsBookTitleWithGivenTitle(title) ){
-                return book;
-            }
-        }
-        return null;
-    }
 }
