@@ -12,6 +12,10 @@ public class LibraryBook {
         this.yearPublished = yearPublished;
     }
 
+    public void bookDetails(){
+        System.out.println(title + "\t" + author + "\t" + String.valueOf(yearPublished));
+    }
+
 
     public boolean equals(Object otherBook){
         LibraryBook libraryBook = (LibraryBook) otherBook;

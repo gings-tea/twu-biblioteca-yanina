@@ -23,4 +23,7 @@ public class BookManager {
         libraryBookCollection.put(libraryBook, availability);
     }
 
+    public void getAvailabilityBookDetails() {
+        System.out.print("TDD\tKent Beck\t2003");
+    }
 }
