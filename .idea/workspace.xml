@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74bc1ae7-af1a-4ed5-a50d-3eb6d5bbaf1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/twu-biblioteca-yanina/com/twu/biblioteca/BookManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/twu-biblioteca-yanina/com/twu/biblioteca/BookManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/twu-biblioteca-yanina/com/twu/biblioteca/LibraryBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/twu-biblioteca-yanina/com/twu/biblioteca/LibraryBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/twu-biblioteca-yanina/com/twu/biblioteca/BookManagerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/twu-biblioteca-yanina/com/twu/biblioteca/BookManagerTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/twu-biblioteca-yanina/com/twu/biblioteca/ExampleTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BookManagerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BookManagerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,24 +26,24 @@
         <counts>
           <entry key="README" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="18" />
+          <entry key="java" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="18" />
+          <entry key="JAVA" value="19" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="2" />
-          <entry key="java" value="2276" />
+          <entry key="java" value="2309" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2276" />
+          <entry key="JAVA" value="2309" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -62,11 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookManagerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="405">
+              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#750#751#0" expanded="true" />
@@ -77,23 +69,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="366">
+              <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/LibraryBook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-              <folding>
-                <element signature="e#713#714#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -119,8 +112,8 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryBookTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Printer.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryBook.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookManagerTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookManagerTests.java" />
       </list>
     </option>
   </component>
@@ -194,7 +187,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535743548371" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535745162426" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -264,18 +257,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 15h 32m 34s.xml">
-      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 15h 37m 52s.xml">
-      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 15h 46m 32s.xml">
-      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 15h 48m 31s.xml">
-      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 15h 53m 54s.xml">
       <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
     </history-entry>
@@ -292,6 +273,18 @@
       <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 16h 24m 30s.xml">
+      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 16h 25m 28s.xml">
+      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 16h 25m 50s.xml">
+      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 16h 46m 35s.xml">
+      <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_twu-biblioteca-yanina - 2018.08.31 at 16h 50m 36s.xml">
       <configuration name="All in twu-biblioteca-yanina" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -385,39 +378,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookManagerTests.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="366">
+          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/LibraryBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="15" column="89" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookManager.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookManagerTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        <state relative-caret-position="405">
+          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
           <folding>
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
           </folding>
         </state>
       </provider>

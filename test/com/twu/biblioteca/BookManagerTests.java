@@ -43,6 +43,6 @@ public class BookManagerTests {
     @Test
     public void getBookDetails() {
         mockBookManager.getAvailabilityBookDetails();
-        assertEquals("TDD\tKent Beck\t2003", outContent.toString());
+        assertEquals("TDD\tKent Beck\t2003\n", outContent.toString());
     }
 }

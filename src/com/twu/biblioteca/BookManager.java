@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import java.util.Hashtable;
+import java.util.Set;
 
 public class BookManager {
 
@@ -24,6 +25,11 @@ public class BookManager {
     }
 
     public void getAvailabilityBookDetails() {
-        System.out.print("TDD\tKent Beck\t2003");
+        Set<LibraryBook> keys = libraryBookCollection.keySet();
+        for(LibraryBook key: keys){
+            if(isBookInAvailable(key)){
+                key.bookDetails();
+            }
+        }
     }
 }
