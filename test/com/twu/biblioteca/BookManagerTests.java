@@ -31,14 +31,27 @@ public class BookManagerTests {
     @Test
     public void isBookAvailableShouldReturnTrue() {
         LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
-        assertEquals(true, mockBookManager.isBookInAvailable(libraryBook));
+        assertEquals(true, mockBookManager.isBookInLibraryAvailable(libraryBook));
+    }
+
+    @Test
+    public void isBookAvailableShouldReturnFalse() {
+        LibraryBook libraryBook = new LibraryBook("T", "Kent Beck", 2000);
+        assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
     }
 
     @Test
     public void checkedOutBookShouldNotBeAvailable(){
         LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
         mockBookManager.changeAvailability(libraryBook, false);
-        assertEquals(false, mockBookManager.isBookInAvailable(libraryBook));
+        assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
+    }
+
+    @Test
+    public void returnNonExistentBook() {
+        LibraryBook libraryBook = new LibraryBook("T", "Kent Beck", 2000);
+        mockBookManager.changeAvailability(libraryBook, true);
+        assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
     }
 
     @Test

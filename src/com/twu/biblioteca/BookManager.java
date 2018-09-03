@@ -10,20 +10,28 @@ public class BookManager {
         this.libraryBookCollection = libraryBookCollection;
     }
 
+    public boolean isBookInLibraryAvailable(LibraryBook libraryBook) {
+        if(isBookInLibrary(libraryBook)){
+            return libraryBookCollection.get(libraryBook);
+        }
+        return false;
+    }
 
-    public boolean isBookInAvailable(LibraryBook libraryBook) {
-        return libraryBookCollection.get(libraryBook);
+    public boolean isBookInLibrary(LibraryBook libraryBook){
+        return libraryBookCollection.containsKey(libraryBook);
     }
 
 
     public void changeAvailability(LibraryBook libraryBook, boolean availability) {
-        libraryBookCollection.put(libraryBook, availability);
+        if(isBookInLibrary(libraryBook)){
+            libraryBookCollection.put(libraryBook, availability);
+        }
     }
 
     public void getAvailableBookDetails(String format) {
         Set<LibraryBook> keys = libraryBookCollection.keySet();
         for(LibraryBook key: keys) {
-            if (isBookInAvailable(key)) {
+            if (isBookInLibraryAvailable(key)) {
                 System.out.printf(format, key.bookDetails());
             }
         }
