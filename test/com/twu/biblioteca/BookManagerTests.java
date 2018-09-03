@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Hashtable;
 
 import static org.junit.Assert.assertEquals;
 
@@ -16,8 +17,9 @@ public class BookManagerTests {
 
     @Before
     public void beforeTest(){
-        mockBookManager = new BookManager();
-        mockBookManager.addBook(new LibraryBook("TDD", "Kent Beck", 2003),true);
+        Hashtable<LibraryBook, Boolean> libraryBookCollection = new Hashtable<>();
+        libraryBookCollection.put(new LibraryBook("TDD", "Kent Beck", 2003),true);
+        mockBookManager = new BookManager(libraryBookCollection);
         System.setOut(new PrintStream(outContent));
     }
 
@@ -29,7 +31,6 @@ public class BookManagerTests {
     @Test
     public void isBookAvailableShouldReturnTrue() {
         LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
-
         assertEquals(true, mockBookManager.isBookInAvailable(libraryBook));
     }
 
@@ -42,7 +43,7 @@ public class BookManagerTests {
 
     @Test
     public void getBookDetails() {
-        mockBookManager.getAvailableBookDetails();
+        mockBookManager.getAvailableBookDetails("%s\t%s\t%s\n");
         assertEquals("TDD\tKent Beck\t2003\n", outContent.toString());
     }
 }

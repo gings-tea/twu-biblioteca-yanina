@@ -12,8 +12,8 @@ public class LibraryBook {
         this.yearPublished = yearPublished;
     }
 
-    public void bookDetails(){
-        System.out.println(title + "\t" + author + "\t" + String.valueOf(yearPublished));
+    public String[] bookDetails(){
+        return new String[]{title, author, String.valueOf(yearPublished)};
     }
 
 
