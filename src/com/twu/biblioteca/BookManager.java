@@ -6,8 +6,13 @@ import java.util.Set;
 public class BookManager {
     private Hashtable<LibraryBook, Boolean> libraryBookCollection;
 
-    public BookManager(Hashtable<LibraryBook, Boolean> libraryBookCollection) {
-        this.libraryBookCollection = libraryBookCollection;
+
+    public BookManager(){
+        this.libraryBookCollection = new Hashtable<>();
+        libraryBookCollection.put(new LibraryBook("TDD", "Kent Beck", 2003),true);
+        libraryBookCollection.put(new LibraryBook("NotAvailable", "Author", 0),false);
+        libraryBookCollection.put(new LibraryBook("Harry Potter", "J K Rowling", 2000),false);
+        libraryBookCollection.put(new LibraryBook("Java", "Kathy Sierra", 2001),false);
     }
 
     public boolean isBookInLibraryAvailable(LibraryBook libraryBook) {

@@ -13,8 +13,7 @@ public class UI {
     BookManager bookManager;
 
     public UI() {
-        DBManager dbManager = new DBManager();
-        bookManager = new BookManager(dbManager.getDB());
+        bookManager = new BookManager();
     }
 
     public void welcomeMessagePrinter(){
@@ -35,11 +34,11 @@ public class UI {
                     break;
                 case 2:
                     libraryBook = enterLibraryBookInformation(sc);
-                    checkOutBook(libraryBook, false, checkOutOkMsg, checkOutErrorMsg);
+                    modifyAvailabilityOfBook(libraryBook, false, checkOutOkMsg, checkOutErrorMsg);
                     break;
                 case 3:
                     libraryBook = enterLibraryBookInformation(sc);
-                    makeAvailableAReturnedBook(libraryBook, true, returnOkMsg, returnErrorMsg);
+                    modifyAvailabilityOfBook(libraryBook, true, returnOkMsg, returnErrorMsg);
                     break;
                 case 4:
                     break;
@@ -52,7 +51,7 @@ public class UI {
     }
 
 
-    public boolean checkOutBook(LibraryBook libraryBook, boolean availability, String successMsg, String errorMsg) {
+    private boolean modifyAvailabilityOfBook(LibraryBook libraryBook, boolean availability, String successMsg, String errorMsg) {
         boolean checkOut = true;
         if (bookManager.changeAvailability(libraryBook, availability)){
             System.out.println(successMsg);
@@ -63,16 +62,6 @@ public class UI {
         return checkOut;
     }
 
-    public boolean makeAvailableAReturnedBook(LibraryBook libraryBook, boolean availability, String successMsg, String errorMsg) {
-        boolean returned = true;
-        if(bookManager.changeAvailability(libraryBook, availability)) {
-            System.out.println(successMsg);
-        } else {
-            System.out.println(errorMsg);
-            returned = false;
-        }
-        return returned;
-    }
 
     private LibraryBook enterLibraryBookInformation(Scanner sc){
         System.out.print("Please enter the book title: ");
