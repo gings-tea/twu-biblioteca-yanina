@@ -17,15 +17,16 @@ public class BookManager {
         return false;
     }
 
-    public boolean isBookInLibrary(LibraryBook libraryBook){
-        return libraryBookCollection.containsKey(libraryBook);
-    }
 
-
-    public void changeAvailability(LibraryBook libraryBook, boolean availability) {
+    public boolean changeAvailability(LibraryBook libraryBook, boolean availability) {
+        boolean changed = false;
         if(isBookInLibrary(libraryBook)){
-            libraryBookCollection.put(libraryBook, availability);
+            if (isBookInLibraryAvailable(libraryBook) ^ availability){
+                libraryBookCollection.put(libraryBook, availability);
+                changed = true;
+            }
         }
+        return changed;
     }
 
     public void getAvailableBookDetails(String format) {
@@ -35,6 +36,10 @@ public class BookManager {
                 System.out.printf(format, key.bookDetails());
             }
         }
+    }
+
+    private boolean isBookInLibrary(LibraryBook libraryBook){
+        return libraryBookCollection.containsKey(libraryBook);
     }
 
 }
