@@ -12,4 +12,8 @@ public class User {
         this.phone = phone;
         this.credentials = credentials;
     }
+
+    public boolean isCredentialCorrect(Credential credential){
+        return this.credentials.equals(credential);
+    }
 }

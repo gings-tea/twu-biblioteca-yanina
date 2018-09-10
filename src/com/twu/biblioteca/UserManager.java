@@ -10,6 +10,6 @@ public class UserManager {
     }
 
     public boolean loginUser(Credential enteredCredentials) {
-        return true;
+        return registerUsers.get(0).isCredentialCorrect(enteredCredentials);
     }
 }

@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.util.Arrays;
+
 public class Credential {
     private String libraryNumber;
     private char[] password;
@@ -13,6 +15,6 @@ public class Credential {
     public boolean equals(Object obj) {
         Credential otherCredential = (Credential) obj;
         return this.libraryNumber.equals(otherCredential.libraryNumber) &&
-                this.password.equals(otherCredential.password);
+                Arrays.equals(this.password,otherCredential.password);
     }
 }
