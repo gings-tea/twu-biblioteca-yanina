@@ -10,6 +10,12 @@ public class UserManager {
     }
 
     public boolean loginUser(Credential enteredCredentials) {
-        return registerUsers.get(0).isCredentialCorrect(enteredCredentials);
+        boolean logedIn = false;
+        for(User u: registerUsers){
+            if(u.isCredentialCorrect(enteredCredentials)){
+                logedIn = true;
+            }
+        }
+        return logedIn;
     }
 }
