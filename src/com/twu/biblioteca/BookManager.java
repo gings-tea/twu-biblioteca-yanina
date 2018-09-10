@@ -23,11 +23,10 @@ public class BookManager {
     }
 
 
-    public boolean changeAvailability(LibraryBook libraryBook, boolean availability, String libraryId) {
+    public boolean changeAvailability(LibraryBook libraryBook, boolean returning, String libraryId) {
         boolean changed;
-        if(availability){
+        if(returning){
             changed = returnBook(libraryBook);
-
         } else {
             changed = checkOutBook(libraryBook,libraryId);
         }
