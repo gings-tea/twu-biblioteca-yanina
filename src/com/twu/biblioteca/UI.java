@@ -54,7 +54,7 @@ public class UI {
     private boolean modifyAvailabilityOfBook(LibraryBook libraryBook, boolean availability, String successMsg, String errorMsg) {
         boolean checkOut = true;
         System.out.println();
-        if (bookManager.changeAvailability(libraryBook, availability)){
+        if (bookManager.changeAvailability(libraryBook, availability, "111-1111")){
             System.out.println(successMsg);
         } else {
             System.out.println(errorMsg);

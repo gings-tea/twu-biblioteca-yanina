@@ -13,11 +13,13 @@ public class BookManagerTests {
     private BookManager mockBookManager;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
+    private String loggedUser;
 
     @Before
     public void beforeTest(){
         mockBookManager = new BookManager();
         System.setOut(new PrintStream(outContent));
+        loggedUser = "111-1111";
     }
 
     @After
@@ -40,21 +42,21 @@ public class BookManagerTests {
     @Test
     public void checkedOutBookShouldNotBeAvailable(){
         LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
-        mockBookManager.changeAvailability(libraryBook, false);
+        mockBookManager.changeAvailability(libraryBook, false, loggedUser);
         assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
     }
 
     @Test
     public void returnedBookShouldBeAvailable(){
         LibraryBook libraryBook = new LibraryBook("NotAvailable", "Author", 0);
-        mockBookManager.changeAvailability(libraryBook, true);
+        mockBookManager.changeAvailability(libraryBook, true, loggedUser);
         assertEquals(true, mockBookManager.isBookInLibraryAvailable(libraryBook));
     }
 
     @Test
     public void returnNonExistentBook() {
         LibraryBook libraryBook = new LibraryBook("T", "Kent Beck", 2000);
-        mockBookManager.changeAvailability(libraryBook, true);
+        mockBookManager.changeAvailability(libraryBook, true, loggedUser);
         assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
     }
 
