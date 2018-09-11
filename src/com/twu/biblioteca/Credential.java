@@ -17,4 +17,8 @@ public class Credential {
         return this.libraryNumber.equals(otherCredential.libraryNumber) &&
                 Arrays.equals(this.password,otherCredential.password);
     }
+
+    public String getLibraryNumber() {
+        return libraryNumber;
+    }
 }

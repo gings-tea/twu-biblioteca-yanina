@@ -10,16 +10,21 @@ public class UserManager {
     }
 
     public boolean loginUser(Credential enteredCredentials) {
-        boolean logedIn = false;
+        boolean loggedIn = false;
         for(User u: registerUsers){
             if(u.isCredentialCorrect(enteredCredentials)){
-                logedIn = true;
+                loggedIn = true;
             }
         }
-        return logedIn;
+        return loggedIn;
     }
 
     public String[] getUserDetailsByID(String libraryID) {
-        return new String[]{"name", "email", "+1234"};
+        for(User user: registerUsers){
+            if(user.isLibraryIDTheSameAsUser(libraryID)){
+                return user.getUserDetails(libraryID);
+            }
+        }
+        return new String[0];
     }
 }

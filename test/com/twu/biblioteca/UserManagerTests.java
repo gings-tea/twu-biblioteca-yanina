@@ -31,6 +31,6 @@ public class UserManagerTests {
 
     @Test
     public void getLoggedUserDetails() {
-        assertEquals(new String[]{"name", "email", "+1234"},userManager.getUserDetailsByID("111-1111"));
+        assertEquals(new String[]{"name", "email", "+1234"}, userManager.getUserDetailsByID("111-1111"));
     }
 }

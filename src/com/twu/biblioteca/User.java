@@ -16,4 +16,15 @@ public class User {
     public boolean isCredentialCorrect(Credential credential){
         return this.credentials.equals(credential);
     }
+
+    public String[] getUserDetails(String libraryID){
+        if(isLibraryIDTheSameAsUser(libraryID)){
+            return new String[]{name, email, phone};
+        }
+        return new String[0];
+    }
+
+    public boolean isLibraryIDTheSameAsUser(String libraryID){
+        return credentials.getLibraryNumber().equals(libraryID);
+    }
 }
