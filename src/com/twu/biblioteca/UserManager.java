@@ -18,4 +18,8 @@ public class UserManager {
         }
         return logedIn;
     }
+
+    public String[] getUserDetailsByID(String libraryID) {
+        return new String[]{"name", "email", "+1234"};
+    }
 }

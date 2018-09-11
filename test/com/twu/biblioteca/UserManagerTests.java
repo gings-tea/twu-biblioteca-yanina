@@ -28,4 +28,9 @@ public class UserManagerTests {
     public void otherUserLogIn() {
         assertEquals(true, userManager.loginUser(new Credential("111-1112","pass".toCharArray())));
     }
+
+    @Test
+    public void getLoggedUserDetails() {
+        assertEquals(new String[]{"name", "email", "+1234"},userManager.getUserDetailsByID("111-1111"));
+    }
 }
