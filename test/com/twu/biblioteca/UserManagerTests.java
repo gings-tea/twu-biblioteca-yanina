@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.models.Credential;
+import com.twu.biblioteca.models.User;
 import org.junit.Before;
 import org.junit.Test;
 

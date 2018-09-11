@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.models.Credential;
+import com.twu.biblioteca.models.User;
+
 import java.util.ArrayList;
 
 public class UserManager {

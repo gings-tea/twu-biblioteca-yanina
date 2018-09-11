@@ -1,8 +1,10 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.models.Book;
+
 import java.util.Scanner;
 
-public class UI {
+class UI {
     private String welcomeMessage = "*** WELCOME TO THE TWU LIBRARY ***";
     private String optionList = "\n1) List all books\n2) Check out book\n3) Return book\n4) Quit\nPlease select an option: ";
     private String format = "%-10s  %-25s  %-5s \n";
@@ -12,15 +14,15 @@ public class UI {
     private String checkOutErrorMsg = "That book is not available.";
     BookManager bookManager;
 
-    public UI() {
+    UI() {
         bookManager = new BookManager();
     }
 
-    public void welcomeMessagePrinter(){
+    void welcomeMessagePrinter(){
         System.out.println(welcomeMessage);
     }
 
-    public void optionManager(){
+    void optionManager(){
         Scanner sc = new Scanner(System.in);
         int optionSelected;
         Book book;
@@ -51,17 +53,14 @@ public class UI {
     }
 
 
-    private boolean modifyAvailabilityOfBook(Book book, boolean availability, String successMsg, String errorMsg) {
-        boolean checkOut = true;
+    private void modifyAvailabilityOfBook(Book book, boolean availability, String successMsg, String errorMsg) {
         System.out.println();
         // TODO: Cambiar el usuario
         if (bookManager.changeAvailability(book, availability,"111-1111")){
             System.out.println(successMsg);
         } else {
             System.out.println(errorMsg);
-            checkOut = false;
         }
-        return checkOut;
     }
 
 

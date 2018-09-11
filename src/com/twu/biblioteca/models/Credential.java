@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.models;
 
 import java.util.Arrays;
 
@@ -18,7 +18,7 @@ public class Credential {
                 Arrays.equals(this.password,otherCredential.password);
     }
 
-    public String getLibraryNumber() {
+    String getLibraryNumber() {
         return libraryNumber;
     }
 }

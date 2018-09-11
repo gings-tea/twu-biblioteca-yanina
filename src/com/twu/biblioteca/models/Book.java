@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.models;
 
 public class Book {
 
@@ -16,7 +16,7 @@ public class Book {
         return new String[]{title, author, String.valueOf(yearPublished)};
     }
 
-
+    @Override
     public boolean equals(Object otherBook){
         Book book = (Book) otherBook;
         return this.title.equals(book.title)  &&

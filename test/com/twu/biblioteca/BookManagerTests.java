@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.models.Book;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,7 +10,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class BookManagerTests {
     private BookManager bookManager;
@@ -40,34 +41,34 @@ public class BookManagerTests {
     @Test
     public void isBookAvailableShouldReturnTrue() {
         Book book = new Book("TDD", "Kent Beck", 2003);
-        assertEquals(true, bookManager.isBookInLibraryAvailable(book));
+        assertTrue(bookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void isBookAvailableShouldReturnFalse() {
         Book book = new Book("T", "Kent Beck", 2000);
-        assertEquals(false, bookManager.isBookInLibraryAvailable(book));
+        assertFalse(bookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void checkedOutBookShouldNotBeAvailable(){
         Book book = new Book("TDD", "Kent Beck", 2003);
         bookManager.changeAvailability(book, false, loggedUser);
-        assertEquals(false, bookManager.isBookInLibraryAvailable(book));
+        assertFalse(bookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void returnedBookShouldBeAvailable(){
         Book book = new Book("NotAvailable", "Author", 0);
         bookManager.changeAvailability(book, true, loggedUser);
-        assertEquals(true, bookManager.isBookInLibraryAvailable(book));
+        assertTrue(bookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void returnNonExistentBook() {
         Book book = new Book("T", "Kent Beck", 2000);
         bookManager.changeAvailability(book, true, loggedUser);
-        assertEquals(false, bookManager.isBookInLibraryAvailable(book));
+        assertFalse(bookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
