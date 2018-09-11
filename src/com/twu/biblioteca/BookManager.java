@@ -7,16 +7,13 @@ public class BookManager {
     private Hashtable<Book, String> checkedOutBooks;
     private ArrayList<Book> availableBooks;
 
+    public BookManager() {
+        fillBookManager();
+    }
 
-    public BookManager(){
-        this.checkedOutBooks = new Hashtable<>();
-        this.availableBooks = new ArrayList<>();
-
-        availableBooks.add(new Book("TDD", "Kent Beck", 2003));
-
-        checkedOutBooks.put(new Book("NotAvailable", "Author", 0),"111-1111");
-        checkedOutBooks.put(new Book("Harry Potter", "J K Rowling", 2000),"111-1111");
-        checkedOutBooks.put(new Book("Java", "Kathy Sierra", 2001),"111-1111");
+    public BookManager(ArrayList availableBooks, Hashtable checkedOutBooks){
+        this.availableBooks = availableBooks;
+        this.checkedOutBooks = checkedOutBooks;
     }
 
     public boolean isBookInLibraryAvailable(Book book) {
@@ -42,6 +39,12 @@ public class BookManager {
         }
     }
 
+    public String whoChecked(Book book) {
+        return "111-1111";
+    }
+
+
+
     private boolean isBookInLibraryNotAvailable(Book book){
         return checkedOutBooks.containsKey(book);
     }
@@ -64,4 +67,12 @@ public class BookManager {
         return false;
     }
 
+    private void fillBookManager(){
+        availableBooks.add(new Book("TDD", "Kent Beck", 2003));
+        availableBooks.add(new Book("Crime and Punishment", "Fyodor Dostoyevsky", 1935));
+
+        checkedOutBooks.put(new Book("Go in Action", "William Kennedy", 2010),"111-1111");
+        checkedOutBooks.put(new Book("Harry Potter I", "J K Rowling", 2000),"111-1112");
+        checkedOutBooks.put(new Book("Java", "Kathy Sierra", 2001),"111-1113");
+    }
 }
