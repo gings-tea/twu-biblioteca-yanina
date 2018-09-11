@@ -65,8 +65,12 @@ public class BookManager {
     }
 
     private void fillBookManager(){
+
+        availableBooks = new ArrayList<>();
         availableBooks.add(new Book("TDD", "Kent Beck", 2003));
         availableBooks.add(new Book("Crime and Punishment", "Fyodor Dostoyevsky", 1935));
+
+        checkedOutBooks = new Hashtable<>();
 
         checkedOutBooks.put(new Book("Go in Action", "William Kennedy", 2010),"111-1111");
         checkedOutBooks.put(new Book("Harry Potter I", "J K Rowling", 2000),"111-1112");

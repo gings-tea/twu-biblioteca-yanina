@@ -6,16 +6,19 @@ import java.util.Scanner;
 
 class UI {
     private String welcomeMessage = "*** WELCOME TO THE TWU LIBRARY ***";
-    private String optionList = "\n1) List all books\n2) Check out book\n3) Return book\n4) Quit\nPlease select an option: ";
+    private String notLoggedOptions = "\n1) List all books\n2) List all movies\n3) Check out movie\n4) Log In\n5) Quit\nPlease select an option: ";
+    private String loggedOptions = "\n1) List all books\n2) Check out book\n3) Return book\n4) List all movies\n5) Check out movie\n6) Log Out\n7) Quit\nPlease select an option: ";
     private String format = "%-10s  %-25s  %-5s \n";
     private String returnOkMsg = "Thank you for returning the book";
     private String returnErrorMsg = "That is not a valid book to return.";
     private String checkOutOkMsg = "Thank you! Enjoy the book";
     private String checkOutErrorMsg = "That book is not available.";
+    private boolean isLogged;
     BookManager bookManager;
 
     UI() {
         bookManager = new BookManager();
+        isLogged = false;
     }
 
     void welcomeMessagePrinter(){
@@ -24,32 +27,73 @@ class UI {
 
     void optionManager(){
         Scanner sc = new Scanner(System.in);
-        int optionSelected;
-        Book book;
-
+        boolean didNotQuit;
         do{
-            System.out.print(optionList);
-            optionSelected = Integer.valueOf(sc.nextLine());
-            switch(optionSelected){
-                case 1:
-                    listAllBooks();
-                    break;
-                case 2:
-                    book = enterLibraryBookInformation(sc);
-                    modifyAvailabilityOfBook(book, false, checkOutOkMsg, checkOutErrorMsg);
-                    break;
-                case 3:
-                    book = enterLibraryBookInformation(sc);
-                    modifyAvailabilityOfBook(book, true, returnOkMsg, returnErrorMsg);
-                    break;
-                case 4:
-                    break;
-                default:
-                    System.out.println();
-                    System.out.println("Select a valid option!");
-                    System.out.println();
+            if(isLogged){
+                didNotQuit = loggedCase(sc);
             }
-        } while(optionSelected != 4);
+            else{
+                didNotQuit = notLoggedCase(sc);
+            }
+        } while(didNotQuit);
+    }
+
+    private boolean loggedCase(Scanner sc){
+        int optionSelected;
+        boolean didNotQuit = true;
+        Book book;
+        System.out.print(loggedOptions);
+        optionSelected = Integer.valueOf(sc.nextLine());
+        switch(optionSelected){
+            case 1:
+                listAllBooks();
+                break;
+            case 2:
+                book = enterLibraryBookInformation(sc);
+                modifyAvailabilityOfBook(book, false, checkOutOkMsg, checkOutErrorMsg);
+                break;
+            case 3:
+                book = enterLibraryBookInformation(sc);
+                modifyAvailabilityOfBook(book, true, returnOkMsg, returnErrorMsg);
+                break;
+            case 7:
+                didNotQuit = false;
+                break;
+            default:
+                System.out.println();
+                System.out.println("Select a valid option!");
+                System.out.println();
+        }
+        return didNotQuit;
+    }
+
+    private boolean notLoggedCase(Scanner sc) {
+        int optionSelected;
+        boolean didNotQuit = true;
+        System.out.print(notLoggedOptions);
+        optionSelected = Integer.valueOf(sc.nextLine());
+        switch(optionSelected){
+            case 1:
+                listAllBooks();
+                break;
+            case 2:
+                System.out.println("not implemented");
+                break;
+            case 3:
+                System.out.println("not implemented");
+                break;
+            case 4:
+                System.out.println("not implemented");
+                break;
+            case 5:
+                didNotQuit = false;
+                break;
+            default:
+                System.out.println();
+                System.out.println("Select a valid option!");
+                System.out.println();
+        }
+        return didNotQuit;
     }
 
 

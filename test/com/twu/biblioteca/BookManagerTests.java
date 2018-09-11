@@ -76,5 +76,5 @@ public class BookManagerTests {
         bookManager.getAvailableBookDetails("%s\t%s\t%s\n");
         assertEquals("TDD\tKent Beck\t2003\n", outContent.toString());
     }
-    
+
 }
