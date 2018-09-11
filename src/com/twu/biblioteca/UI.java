@@ -23,7 +23,7 @@ public class UI {
     public void optionManager(){
         Scanner sc = new Scanner(System.in);
         int optionSelected;
-        LibraryBook libraryBook;
+        Book book;
 
         do{
             System.out.print(optionList);
@@ -33,12 +33,12 @@ public class UI {
                     listAllBooks();
                     break;
                 case 2:
-                    libraryBook = enterLibraryBookInformation(sc);
-                    modifyAvailabilityOfBook(libraryBook, false, checkOutOkMsg, checkOutErrorMsg);
+                    book = enterLibraryBookInformation(sc);
+                    modifyAvailabilityOfBook(book, false, checkOutOkMsg, checkOutErrorMsg);
                     break;
                 case 3:
-                    libraryBook = enterLibraryBookInformation(sc);
-                    modifyAvailabilityOfBook(libraryBook, true, returnOkMsg, returnErrorMsg);
+                    book = enterLibraryBookInformation(sc);
+                    modifyAvailabilityOfBook(book, true, returnOkMsg, returnErrorMsg);
                     break;
                 case 4:
                     break;
@@ -51,10 +51,11 @@ public class UI {
     }
 
 
-    private boolean modifyAvailabilityOfBook(LibraryBook libraryBook, boolean availability, String successMsg, String errorMsg) {
+    private boolean modifyAvailabilityOfBook(Book book, boolean availability, String successMsg, String errorMsg) {
         boolean checkOut = true;
         System.out.println();
-        if (bookManager.changeAvailability(libraryBook, availability, "111-1111")){
+        // TODO: Cambiar el usuario
+        if (bookManager.changeAvailability(book, availability,"111-1111")){
             System.out.println(successMsg);
         } else {
             System.out.println(errorMsg);
@@ -64,7 +65,7 @@ public class UI {
     }
 
 
-    private LibraryBook enterLibraryBookInformation(Scanner sc){
+    private Book enterLibraryBookInformation(Scanner sc){
         System.out.println();
         System.out.print("Please enter the book title: ");
         String title = sc.nextLine();
@@ -72,7 +73,7 @@ public class UI {
         String author = sc.nextLine();
         System.out.print("Please enter the book year of publication: ");
         int yearPublished = Integer.valueOf(sc.nextLine());
-        return new LibraryBook(title, author, yearPublished);
+        return new Book(title, author, yearPublished);
     }
 
     private void listAllBooks(){

@@ -1,12 +1,12 @@
 package com.twu.biblioteca;
 
-public class LibraryBook {
+public class Book {
 
     private String title;
     private String author;
     private int yearPublished;
 
-    public LibraryBook(String title, String author, int yearPublished) {
+    public Book(String title, String author, int yearPublished) {
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
@@ -18,10 +18,10 @@ public class LibraryBook {
 
 
     public boolean equals(Object otherBook){
-        LibraryBook libraryBook = (LibraryBook) otherBook;
-        return this.title.equals(libraryBook.title)  &&
-                this.yearPublished == libraryBook.yearPublished &&
-                this.author.equals(libraryBook.author) ;
+        Book book = (Book) otherBook;
+        return this.title.equals(book.title)  &&
+                this.yearPublished == book.yearPublished &&
+                this.author.equals(book.author) ;
     }
 
     public int hashCode() {

@@ -29,35 +29,35 @@ public class BookManagerTests {
 
     @Test
     public void isBookAvailableShouldReturnTrue() {
-        LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
-        assertEquals(true, mockBookManager.isBookInLibraryAvailable(libraryBook));
+        Book book = new Book("TDD", "Kent Beck", 2003);
+        assertEquals(true, mockBookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void isBookAvailableShouldReturnFalse() {
-        LibraryBook libraryBook = new LibraryBook("T", "Kent Beck", 2000);
-        assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
+        Book book = new Book("T", "Kent Beck", 2000);
+        assertEquals(false, mockBookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void checkedOutBookShouldNotBeAvailable(){
-        LibraryBook libraryBook = new LibraryBook("TDD", "Kent Beck", 2003);
-        mockBookManager.changeAvailability(libraryBook, false, loggedUser);
-        assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
+        Book book = new Book("TDD", "Kent Beck", 2003);
+        mockBookManager.changeAvailability(book, false, loggedUser);
+        assertEquals(false, mockBookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void returnedBookShouldBeAvailable(){
-        LibraryBook libraryBook = new LibraryBook("NotAvailable", "Author", 0);
-        mockBookManager.changeAvailability(libraryBook, true, loggedUser);
-        assertEquals(true, mockBookManager.isBookInLibraryAvailable(libraryBook));
+        Book book = new Book("NotAvailable", "Author", 0);
+        mockBookManager.changeAvailability(book, true, loggedUser);
+        assertEquals(true, mockBookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
     public void returnNonExistentBook() {
-        LibraryBook libraryBook = new LibraryBook("T", "Kent Beck", 2000);
-        mockBookManager.changeAvailability(libraryBook, true, loggedUser);
-        assertEquals(false, mockBookManager.isBookInLibraryAvailable(libraryBook));
+        Book book = new Book("T", "Kent Beck", 2000);
+        mockBookManager.changeAvailability(book, true, loggedUser);
+        assertEquals(false, mockBookManager.isBookInLibraryAvailable(book));
     }
 
     @Test
