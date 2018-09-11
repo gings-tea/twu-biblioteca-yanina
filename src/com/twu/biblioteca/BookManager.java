@@ -41,11 +41,6 @@ public class BookManager {
         }
     }
 
-    public String whoChecked(Book book) {
-        return "111-1111";
-    }
-
-
 
     private boolean isBookInLibraryNotAvailable(Book book){
         return checkedOutBooks.containsKey(book);

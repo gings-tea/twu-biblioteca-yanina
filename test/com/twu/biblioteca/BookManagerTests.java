@@ -76,10 +76,5 @@ public class BookManagerTests {
         bookManager.getAvailableBookDetails("%s\t%s\t%s\n");
         assertEquals("TDD\tKent Beck\t2003\n", outContent.toString());
     }
-
-    @Test
-    public void askForWhoCheckedABook() {
-        Book book = new Book("NotAvailable", "Author", 0);
-        assertEquals("111-1111", bookManager.whoChecked(book));
-    }
+    
 }
