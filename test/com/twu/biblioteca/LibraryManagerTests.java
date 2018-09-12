@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.Movie;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,13 +23,16 @@ public class LibraryManagerTests {
     public void beforeTest(){
         Hashtable<Book, String> checkedOutBooks = new Hashtable<>();
         ArrayList<Book> availableBooks = new ArrayList<>();
+        ArrayList<Movie> availableMovies = new ArrayList<>();
 
         availableBooks.add(new Book("TDD", "Kent Beck", 2003));
 
         checkedOutBooks.put(new Book("NotAvailable", "Author", 0),"111-1111");
         checkedOutBooks.put(new Book("Harry Potter", "J K Rowling", 2000),"111-1111");
         checkedOutBooks.put(new Book("Java", "Kathy Sierra", 2001),"111-1111");
-        libraryManager = new LibraryManager(availableBooks,checkedOutBooks);
+
+        availableMovies.add(new Movie("Interstellar", "Christopher Nolan",2014,10));
+        libraryManager = new LibraryManager(availableBooks,checkedOutBooks,availableMovies);
         System.setOut(new PrintStream(outContent));
         loggedUser = "111-1111";
     }

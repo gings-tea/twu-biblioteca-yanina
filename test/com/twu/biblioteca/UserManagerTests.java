@@ -23,12 +23,12 @@ public class UserManagerTests {
 
     @Test
     public void loginUserIfExists() {
-        assertEquals(true, userManager.loginUser(new Credential("111-1111","password".toCharArray())));
+        assertEquals("111-1111", userManager.loginUser(new Credential("111-1111","password".toCharArray())));
     }
 
     @Test
     public void otherUserLogIn() {
-        assertEquals(true, userManager.loginUser(new Credential("111-1112","pass".toCharArray())));
+        assertEquals("111-1112", userManager.loginUser(new Credential("111-1112","pass".toCharArray())));
     }
 
     @Test

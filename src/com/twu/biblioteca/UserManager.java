@@ -16,14 +16,14 @@ public class UserManager {
         this.registerUsers = registerUsers;
     }
 
-    public boolean loginUser(Credential enteredCredentials) {
-        boolean loggedIn = false;
+    public String loginUser(Credential enteredCredentials) {
+        String id = "";
         for(User u: registerUsers){
             if(u.isCredentialCorrect(enteredCredentials)){
-                loggedIn = true;
+                id = enteredCredentials.getLibraryNumber();
             }
         }
-        return loggedIn;
+        return id;
     }
 
     public String[] getUserDetailsByID(String libraryID) {

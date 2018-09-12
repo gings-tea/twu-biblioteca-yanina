@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.Movie;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -9,13 +10,16 @@ public class LibraryManager {
     private Hashtable<Book, String> checkedOutBooks;
     private ArrayList<Book> availableBooks;
 
+    private ArrayList<Movie> availableMovies;
+
     public LibraryManager() {
-        fillBookManager();
+        fillLibraryItems();
     }
 
-    public LibraryManager(ArrayList availableBooks, Hashtable checkedOutBooks){
+    public LibraryManager(ArrayList availableBooks, Hashtable checkedOutBooks, ArrayList availableMovies){
         this.availableBooks = availableBooks;
         this.checkedOutBooks = checkedOutBooks;
+        this.availableMovies = availableMovies;
     }
 
     public boolean isBookInLibraryAvailable(Book book) {
@@ -35,15 +39,15 @@ public class LibraryManager {
 
     public void getAvailableBookDetails(String format) {
         for(Book book: availableBooks) {
-            if (isBookInLibraryAvailable(book)) {
-                System.out.printf(format, book.bookDetails());
-            }
+            System.out.printf(format, book.bookDetails());
         }
     }
 
 
     public void getAvailableMovieDetails(String format) {
-        System.out.println("Interstellar\tChristopher Nolan\t2014\t10");
+        for(Movie movie: availableMovies) {
+            System.out.printf(format, movie.movieDetails());
+        }
     }
 
     private boolean isBookInLibraryNotAvailable(Book book){
@@ -68,7 +72,7 @@ public class LibraryManager {
         return false;
     }
 
-    private void fillBookManager(){
+    private void fillLibraryItems(){
 
         availableBooks = new ArrayList<>();
         availableBooks.add(new Book("TDD", "Kent Beck", 2003));
@@ -79,5 +83,8 @@ public class LibraryManager {
         checkedOutBooks.put(new Book("Go in Action", "William Kennedy", 2010),"111-1111");
         checkedOutBooks.put(new Book("Harry Potter I", "J K Rowling", 2000),"111-1112");
         checkedOutBooks.put(new Book("Java", "Kathy Sierra", 2001),"111-1113");
+
+        availableMovies = new ArrayList<>();
+        
     }
 }

@@ -13,56 +13,19 @@ class UI {
     private String returnErrorMsg = "That is not a valid book to return.";
     private String checkOutOkMsg = "Thank you! Enjoy the book";
     private String checkOutErrorMsg = "That book is not available.";
-    private boolean isLogged;
-    private LibraryManager libraryManager;
-    private UserManager userManager;
-
-    UI() {
-
-        libraryManager = new LibraryManager();
-        userManager = new UserManager();
-        isLogged = false;
-    }
 
     void welcomeMessagePrinter(){
         System.out.println(welcomeMessage);
     }
 
-    void getOption(){
+    public String getOption(boolean isLogged){
+        showOptionsIfLoggedOrNot(isLogged);
         Scanner sc = new Scanner(System.in);
-        String optionSelected;
-        do{
-            ShowOptionsIfLoggedOrNot();
-            optionSelected = sc.nextLine();
-            switch(optionSelected){
-                case "1":
-                    listAllBooks();
-                    break;
-                case "2":
-                    if(isLogged)
-                        modifyAvailabilityOfBook(false, checkOutOkMsg, checkOutErrorMsg);
-                    else
-                        System.out.println("Please log in first");
-                    break;
-                case "3":
-                    if(isLogged)
-                        modifyAvailabilityOfBook(true, returnOkMsg, returnErrorMsg);
-                    else
-                        System.out.println("Please log in first");
-                    break;
-                case "6":
-                    isLogged = logIn(sc);
-                case "q":
-                    break;
-                default:
-                    System.out.println();
-                    System.out.println("Select a valid option!");
-                    System.out.println();
-            }
-        } while(isNotQuitting(optionSelected));
+        return sc.nextLine();
     }
 
-    private boolean logIn(Scanner sc){
+    public String getLogInCredentials(UserManager userManager){
+        Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.print("Please enter your library ID: ");
         String libraryID = sc.nextLine();
@@ -71,11 +34,15 @@ class UI {
         return userManager.loginUser(new Credential(libraryID, password));
     }
 
-    private boolean isNotQuitting(String optionSelected) {
-        return !optionSelected.toLowerCase().equals("q");
+    public void listAllBooks(LibraryManager libraryManager){
+        System.out.println();
+        System.out.println("Available books");
+        System.out.printf(format,"Title","Author","Year Published");
+        libraryManager.getAvailableBookDetails(format);
     }
 
-    private Book enterLibraryBookInformation(Scanner sc){
+    public Book enterLibraryBookInformation(){
+        Scanner sc = new  Scanner(System.in);
         System.out.println();
         System.out.print("Please enter the book title: ");
         String title = sc.nextLine();
@@ -86,7 +53,39 @@ class UI {
         return new Book(title, author, yearPublished);
     }
 
-    private void ShowOptionsIfLoggedOrNot(){
+    public void printSuccess(boolean isReturning){
+        if(isReturning){
+            System.out.println(returnOkMsg);
+        }
+        else {
+            System.out.println(checkOutOkMsg);
+        }
+    }
+
+    public void printError(boolean isReturning){
+        if(isReturning){
+            System.out.println(returnErrorMsg);
+        }
+        else {
+            System.out.println(checkOutErrorMsg);
+        }
+    }
+
+    public boolean isNotQuitting(String optionSelected) {
+        return !optionSelected.toLowerCase().equals("q");
+    }
+
+    public void showLogged() {
+        System.out.println();
+        System.out.println("You're now logged in");
+    }
+
+    public void showNotLogged() {
+        System.out.println();
+        System.out.println("You're not logged");
+    }
+
+    private void showOptionsIfLoggedOrNot(boolean isLogged){
         if(isLogged){
             System.out.print(commonOptions + "Log out\nPlease enter an option or enter Q to quit: ");
         }
@@ -94,23 +93,4 @@ class UI {
             System.out.print(commonOptions + "Log In\nPlease enter an option or enter Q to quit: ");
         }
     }
-
-    private void listAllBooks(){
-        System.out.println();
-        System.out.println("Available books");
-        System.out.printf(format,"Title","Author","Year Published");
-        libraryManager.getAvailableBookDetails(format);
-    }
-
-    private void modifyAvailabilityOfBook(boolean availability, String successMsg, String errorMsg) {
-        System.out.println();
-        Book book = enterLibraryBookInformation(new Scanner(System.in));
-        // TODO: Cambiar el usuario
-        if (libraryManager.changeAvailability(book, availability,"111-1111")){
-            System.out.println(successMsg);
-        } else {
-            System.out.println(errorMsg);
-        }
-    }
-
 }
