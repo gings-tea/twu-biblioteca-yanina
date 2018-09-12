@@ -31,7 +31,6 @@ class UI {
     void optionManager(){
         Scanner sc = new Scanner(System.in);
         String optionSelected;
-        Book book;
         do{
             optionPrint();
             optionSelected = sc.nextLine();
@@ -40,14 +39,17 @@ class UI {
                     listAllBooks();
                     break;
                 case "2":
-                    book = enterLibraryBookInformation(sc);
-                    modifyAvailabilityOfBook(book, false, checkOutOkMsg, checkOutErrorMsg);
+                    if(isLogged)
+                        modifyAvailabilityOfBook(false, checkOutOkMsg, checkOutErrorMsg);
+                    else
+                        System.out.println("Please log in first");
                     break;
                 case "3":
-                    book = enterLibraryBookInformation(sc);
-                    modifyAvailabilityOfBook(book, true, returnOkMsg, returnErrorMsg);
+                    if(isLogged)
+                        modifyAvailabilityOfBook(true, returnOkMsg, returnErrorMsg);
+                    else
+                        System.out.println("Please log in first");
                     break;
-
                 case "6":
                     isLogged = logIn(sc);
                 case "q":
@@ -100,8 +102,9 @@ class UI {
         bookManager.getAvailableBookDetails(format);
     }
 
-    private void modifyAvailabilityOfBook(Book book, boolean availability, String successMsg, String errorMsg) {
+    private void modifyAvailabilityOfBook(boolean availability, String successMsg, String errorMsg) {
         System.out.println();
+        Book book = enterLibraryBookInformation(new Scanner(System.in));
         // TODO: Cambiar el usuario
         if (bookManager.changeAvailability(book, availability,"111-1111")){
             System.out.println(successMsg);
