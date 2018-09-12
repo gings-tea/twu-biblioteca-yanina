@@ -40,9 +40,13 @@ public class BibliotecaApp {
                     else
                         System.out.println("Please log in first");
                     break;
+                case "4":
+                    ui.listAllMovies(libraryManager);
+                    break;
                 case "6":
                     loggedUserID = getLoggedUserID();
                     setLoggedState(loggedUserID);
+                    break;
                 case "q":
                     break;
                 default:
