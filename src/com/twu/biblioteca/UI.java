@@ -14,12 +14,12 @@ class UI {
     private String checkOutOkMsg = "Thank you! Enjoy the book";
     private String checkOutErrorMsg = "That book is not available.";
     private boolean isLogged;
-    private BookManager bookManager;
+    private LibraryManager libraryManager;
     private UserManager userManager;
 
     UI() {
 
-        bookManager = new BookManager();
+        libraryManager = new LibraryManager();
         userManager = new UserManager();
         isLogged = false;
     }
@@ -28,11 +28,11 @@ class UI {
         System.out.println(welcomeMessage);
     }
 
-    void optionManager(){
+    void getOption(){
         Scanner sc = new Scanner(System.in);
         String optionSelected;
         do{
-            optionPrint();
+            ShowOptionsIfLoggedOrNot();
             optionSelected = sc.nextLine();
             switch(optionSelected){
                 case "1":
@@ -86,7 +86,7 @@ class UI {
         return new Book(title, author, yearPublished);
     }
 
-    private void optionPrint(){
+    private void ShowOptionsIfLoggedOrNot(){
         if(isLogged){
             System.out.print(commonOptions + "Log out\nPlease enter an option or enter Q to quit: ");
         }
@@ -99,14 +99,14 @@ class UI {
         System.out.println();
         System.out.println("Available books");
         System.out.printf(format,"Title","Author","Year Published");
-        bookManager.getAvailableBookDetails(format);
+        libraryManager.getAvailableBookDetails(format);
     }
 
     private void modifyAvailabilityOfBook(boolean availability, String successMsg, String errorMsg) {
         System.out.println();
         Book book = enterLibraryBookInformation(new Scanner(System.in));
         // TODO: Cambiar el usuario
-        if (bookManager.changeAvailability(book, availability,"111-1111")){
+        if (libraryManager.changeAvailability(book, availability,"111-1111")){
             System.out.println(successMsg);
         } else {
             System.out.println(errorMsg);

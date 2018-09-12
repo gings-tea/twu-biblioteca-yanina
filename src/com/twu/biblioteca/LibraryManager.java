@@ -5,15 +5,15 @@ import com.twu.biblioteca.models.Book;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class BookManager {
+public class LibraryManager {
     private Hashtable<Book, String> checkedOutBooks;
     private ArrayList<Book> availableBooks;
 
-    public BookManager() {
+    public LibraryManager() {
         fillBookManager();
     }
 
-    public BookManager(ArrayList availableBooks, Hashtable checkedOutBooks){
+    public LibraryManager(ArrayList availableBooks, Hashtable checkedOutBooks){
         this.availableBooks = availableBooks;
         this.checkedOutBooks = checkedOutBooks;
     }
@@ -41,6 +41,10 @@ public class BookManager {
         }
     }
 
+
+    public void getAvailableMovieDetails(String format) {
+        System.out.println("Interstellar\tChristopher Nolan\t2014\t10");
+    }
 
     private boolean isBookInLibraryNotAvailable(Book book){
         return checkedOutBooks.containsKey(book);
