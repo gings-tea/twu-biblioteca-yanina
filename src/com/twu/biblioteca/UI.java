@@ -9,7 +9,7 @@ class UI {
     private String welcomeMessage = "*** WELCOME TO THE TWU LIBRARY ***";
     private String commonOptions = "\n1) List all books\n2) Check out book\n3) Return book\n4) List all movies\n5) Check out movie\n6) ";
     private String formatBook = "%-25s  %-25s  %-5s \n";
-    private String formatMovie = "%-25s  %-25s  %-5s %-5s\n";
+    private String formatMovie = "%-25s  %-25s  %-5s %-15s\n";
     private String returnOkMsg = "Thank you for returning the book";
     private String returnErrorMsg = "That is not a valid book to return.";
     private String checkOutOkMsg = "Thank you! Enjoy the book";
@@ -103,7 +103,8 @@ class UI {
     }
 
     public void showUserDetails(UserManager userManager, String loggedUserID) {
+        System.out.println();
         System.out.printf("Name: %-30s\nEmail: %-30s\nPhone: %-30s", userManager.getUserDetailsByID(loggedUserID));
-
+        System.out.println();
     }
 }
