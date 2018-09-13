@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.Movie;
 
 
 public class BibliotecaApp {
@@ -43,6 +44,9 @@ public class BibliotecaApp {
                 case "4":
                     ui.listAllMovies(libraryManager);
                     break;
+                case "5":
+                    checkOutMovie();
+                    break;
                 case "6":
                     loggedUserID = getLoggedUserID();
                     setLoggedState(loggedUserID);
@@ -61,6 +65,17 @@ public class BibliotecaApp {
                     ui.showNotCorrectOptionMsg();
             }
         } while(ui.isNotQuitting(optionSelected));
+    }
+
+    private static void checkOutMovie() {
+        Movie movie = ui.enterMovieInformation();
+        if(libraryManager.checkOutMovie(movie)){
+            ui.showSuccessMovieCheckOut();
+        }
+        else{
+            ui.showErrorMovieCheckOut();
+        }
+
     }
 
     private static String getLoggedUserID() {

@@ -2,6 +2,8 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.Credential;
+import com.twu.biblioteca.models.Movie;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Scanner;
 
@@ -61,6 +63,30 @@ class UI {
         return new Book(title, author, yearPublished);
     }
 
+    public Movie enterMovieInformation() {
+        Scanner sc = new  Scanner(System.in);
+        System.out.println();
+        System.out.print("Please enter the movie name: ");
+        String name = sc.nextLine();
+        System.out.print("Please enter the movie director: ");
+        String director = sc.nextLine();
+        System.out.print("Please enter the movie year: ");
+        int year = Integer.valueOf(sc.nextLine());
+        System.out.print("Please enter the movie rate if applies: ");
+        String rate = sc.nextLine();
+        return getMovie(name, director, year, rate);
+    }
+
+    @NotNull
+    private Movie getMovie(String name, String director, int year, String rate) {
+        if(rate.isEmpty()){
+            return new Movie(name, director, year);
+        }
+        else {
+            return new Movie(name, director, year, rate);
+        }
+    }
+
     public void printSuccess(boolean isReturning){
         if(isReturning){
             System.out.println(returnOkMsg);
@@ -112,5 +138,14 @@ class UI {
         System.out.println();
         System.out.printf("Name: %-30s\nEmail: %-30s\nPhone: %-30s", userManager.getUserDetailsByID(loggedUserID));
         System.out.println();
+    }
+
+    public void showSuccessMovieCheckOut() {
+        System.out.println();
+        System.out.println("Thank you! Enjoy the movie");
+    }
+
+    public void showErrorMovieCheckOut() {
+        System.out.println("That movie is not available.");
     }
 }
