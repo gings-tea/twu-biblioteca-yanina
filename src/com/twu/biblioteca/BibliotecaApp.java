@@ -17,10 +17,10 @@ public class BibliotecaApp {
         userManager = new UserManager();
         isLogged = false;
         ui.welcomeMessagePrinter();
-        showInformationBasedOnUserOption();
+        decideFlowBasedOnUserOption();
     }
 
-    private static void showInformationBasedOnUserOption(){
+    private static void decideFlowBasedOnUserOption(){
         String optionSelected;
         do{
             optionSelected = ui.getOption(isLogged);
@@ -51,6 +51,7 @@ public class BibliotecaApp {
                     if (isLogged){
                         ui.showUserDetails(userManager, loggedUserID);
                     }
+                    break;
                 case "q":
                     break;
                 default:

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="74bc1ae7-af1a-4ed5-a50d-3eb6d5bbaf1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,13 +42,13 @@
         <counts>
           <entry key="dummy" value="50" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="9959" />
+          <entry key="java" value="9970" />
           <entry key="library" value="107" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9959" />
+          <entry key="JAVA" value="9970" />
           <entry key="PLAIN_TEXT" value="159" />
         </counts>
       </usages-collector>
@@ -63,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="82" column="53" lean-forward="true" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+            <state relative-caret-position="205">
+              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -164,8 +163,8 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/UserManagerTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/Credential.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/UserManager.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/UI.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
       </list>
     </option>
   </component>
@@ -591,8 +590,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="82" column="53" lean-forward="true" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+        <state relative-caret-position="205">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
         </state>
       </provider>
     </entry>
