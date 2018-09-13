@@ -11,6 +11,7 @@ public class LibraryManager {
     private ArrayList<Book> availableBooks;
 
     private ArrayList<Movie> availableMovies;
+    private ArrayList<Movie> checkedOutMovies;
 
     public LibraryManager() {
         fillLibraryItems();
@@ -20,6 +21,7 @@ public class LibraryManager {
         this.availableBooks = availableBooks;
         this.checkedOutBooks = checkedOutBooks;
         this.availableMovies = availableMovies;
+        checkedOutMovies = new ArrayList<>();
     }
 
     public boolean isBookInLibraryAvailable(Book book) {
@@ -27,7 +29,11 @@ public class LibraryManager {
     }
 
 
-    public boolean changeAvailability(Book book, boolean returning, String libraryId) {
+    public boolean isMovieInLibraryAvailable(Movie movie) {
+        return availableMovies.contains(movie);
+    }
+
+    public boolean changeBookAvailability(Book book, boolean returning, String libraryId) {
         boolean changed;
         if(returning){
             changed = returnBook(book);
@@ -72,6 +78,15 @@ public class LibraryManager {
         return false;
     }
 
+    public boolean checkOutMovie(Movie movie) {
+        if(isMovieInLibraryAvailable(movie)){
+            availableMovies.remove(movie);
+            checkedOutMovies.add(movie);
+            return true;
+        }
+        return false;
+    }
+
     private void fillLibraryItems(){
 
         availableBooks = new ArrayList<>();
@@ -87,6 +102,8 @@ public class LibraryManager {
         availableMovies = new ArrayList<>();
         availableMovies.add(new Movie("The Godfather", "Coppola", 1972, "9.2"));
         availableMovies.add(new Movie("Gone Girl", "David Fincher", 2014, "8..1"));
-        
+
+        checkedOutMovies = new ArrayList<>();
+
     }
 }

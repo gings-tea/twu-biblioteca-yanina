@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="74bc1ae7-af1a-4ed5-a50d-3eb6d5bbaf1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryManagerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryManagerTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,13 +44,13 @@
         <counts>
           <entry key="dummy" value="50" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="10338" />
+          <entry key="java" value="10482" />
           <entry key="library" value="107" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10338" />
+          <entry key="JAVA" value="10482" />
           <entry key="PLAIN_TEXT" value="159" />
         </counts>
       </usages-collector>
@@ -69,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+            <state relative-caret-position="780">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#793#794#0" expanded="true" />
@@ -90,13 +91,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/LibraryManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="88" column="79" selection-start-line="88" selection-start-column="79" selection-end-line="88" selection-end-column="79" />
+            <state relative-caret-position="298">
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#831#832#0" expanded="true" />
+                <element signature="e#879#880#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/LibraryManagerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="371">
+              <caret line="104" column="30" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -212,11 +215,11 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/UserTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/UserTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/Movie.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryManager.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/MovieTests.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryManagerTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/UI.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/LibraryManagerTests.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryManager.java" />
       </list>
     </option>
   </component>
@@ -293,7 +296,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536861657722" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536863829068" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -320,7 +323,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BibliotecaApp">
+  <component name="RunManager" selected="JUnit.LibraryManagerTests.checkedOutMovieShouldNotBeAvailable">
     <configuration name="BibliotecaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaApp" />
       <module name="twu-biblioteca-yanina" />
@@ -334,7 +337,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryManagerTests.getMovieDetailsShowsOnlyAvailableMovies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibraryManagerTests.checkedOutMovieShouldNotBeAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="twu-biblioteca-yanina" />
       <extension name="coverage">
         <pattern>
@@ -344,29 +347,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.LibraryManagerTests" />
-      <option name="METHOD_NAME" value="getMovieDetailsShowsOnlyAvailableMovies" />
+      <option name="METHOD_NAME" value="checkedOutMovieShouldNotBeAvailable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieTests.ifCreateMovieWithoutRateShouldAppearAsUnrated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="twu-biblioteca-yanina" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.MovieTests" />
-      <option name="METHOD_NAME" value="ifCreateMovieWithoutRateShouldAppearAsUnrated" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserManagerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibraryManagerTests.isMovieAvailableShouldReturnFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="twu-biblioteca-yanina" />
       <extension name="coverage">
         <pattern>
@@ -375,7 +362,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserManagerTests" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.LibraryManagerTests" />
+      <option name="METHOD_NAME" value="isMovieAvailableShouldReturnFalse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LibraryManagerTests.isMovieAvailableShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="twu-biblioteca-yanina" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.LibraryManagerTests" />
+      <option name="METHOD_NAME" value="isMovieAvailableShouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -395,19 +400,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.LibraryManagerTests.getMovieDetailsShowsOnlyAvailableMovies" />
-      <item itemvalue="JUnit.UserManagerTests" />
       <item itemvalue="Application.BibliotecaApp" />
       <item itemvalue="JUnit.com.twu.biblioteca in twu-biblioteca-yanina" />
-      <item itemvalue="JUnit.MovieTests.ifCreateMovieWithoutRateShouldAppearAsUnrated" />
+      <item itemvalue="JUnit.LibraryManagerTests.isMovieAvailableShouldReturnTrue" />
+      <item itemvalue="JUnit.LibraryManagerTests.isMovieAvailableShouldReturnFalse" />
+      <item itemvalue="JUnit.LibraryManagerTests.checkedOutMovieShouldNotBeAvailable" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryManagerTests.checkedOutMovieShouldNotBeAvailable" />
+        <item itemvalue="JUnit.LibraryManagerTests.isMovieAvailableShouldReturnFalse" />
+        <item itemvalue="JUnit.LibraryManagerTests.isMovieAvailableShouldReturnTrue" />
         <item itemvalue="Application.BibliotecaApp" />
         <item itemvalue="JUnit.com.twu.biblioteca in twu-biblioteca-yanina" />
-        <item itemvalue="JUnit.MovieTests.ifCreateMovieWithoutRateShouldAppearAsUnrated" />
-        <item itemvalue="JUnit.UserManagerTests" />
-        <item itemvalue="JUnit.LibraryManagerTests.getMovieDetailsShowsOnlyAvailableMovies" />
       </list>
     </recent_temporary>
   </component>
@@ -425,18 +430,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserTest_sameIdShouldShowDetails - 2018.09.12 at 14h 45m 03s.xml">
-      <configuration name="UserTest.sameIdShouldShowDetails" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserTest_wrongIdShouldNotShowDetails - 2018.09.12 at 14h 46m 00s.xml">
-      <configuration name="UserTest.wrongIdShouldNotShowDetails" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LibraryManagerTests - 2018.09.12 at 14h 50m 56s.xml">
-      <configuration name="LibraryManagerTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LibraryManagerTests_getMovieDetailsShowsOnlyAvailableMovies - 2018.09.12 at 14h 52m 44s.xml">
-      <configuration name="LibraryManagerTests.getMovieDetailsShowsOnlyAvailableMovies" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserManagerTests - 2018.09.12 at 15h 56m 52s.xml">
       <configuration name="UserManagerTests" configurationId="JUnit" />
     </history-entry>
@@ -454,6 +447,18 @@
     </history-entry>
     <history-entry file="com_twu_biblioteca_in_twu-biblioteca-yanina - 2018.09.13 at 11h 51m 21s.xml">
       <configuration name="com.twu.biblioteca in twu-biblioteca-yanina" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LibraryManagerTests_isMovieAvailableShouldReturnTrue - 2018.09.13 at 15h 27m 30s.xml">
+      <configuration name="LibraryManagerTests.isMovieAvailableShouldReturnTrue" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LibraryManagerTests_isMovieAvailableShouldReturnFalse - 2018.09.13 at 15h 27m 33s.xml">
+      <configuration name="LibraryManagerTests.isMovieAvailableShouldReturnFalse" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LibraryManagerTests_isMovieAvailableShouldReturnFalse - 2018.09.13 at 15h 28m 25s.xml">
+      <configuration name="LibraryManagerTests.isMovieAvailableShouldReturnFalse" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LibraryManagerTests_checkedOutMovieShouldNotBeAvailable - 2018.09.13 at 15h 36m 35s.xml">
+      <configuration name="LibraryManagerTests.checkedOutMovieShouldNotBeAvailable" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -624,30 +629,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/LibraryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="88" column="79" selection-start-line="88" selection-start-column="79" selection-end-line="88" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/MovieTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="53" lean-forward="true" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/LibraryManagerTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -663,8 +648,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+        <state relative-caret-position="780">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#793#794#0" expanded="true" />
@@ -676,6 +661,28 @@
             <element signature="method#enterLibraryBookInformation#0;class#UI#0" />
             <element signature="e#3013#3014#0" expanded="true" />
             <element signature="e#3077#3078#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/LibraryManagerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="104" column="30" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/LibraryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
           </folding>
         </state>
       </provider>

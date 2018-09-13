@@ -83,7 +83,7 @@ public class BibliotecaApp {
 
     private static void modifyAvailabilityOfBook(boolean availability) {
         Book book = ui.enterLibraryBookInformation();
-        if (libraryManager.changeAvailability(book, availability,loggedUserID)){
+        if (libraryManager.changeBookAvailability(book, availability,loggedUserID)){
             ui.printSuccess(availability);
         } else {
             ui.printError(availability);
