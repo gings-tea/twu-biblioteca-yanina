@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class UserTest {
+public class UserTests {
     @Test
     public void equalCredentialsShouldBeTrue() {
         User user = new User("a", "b", "+1", new Credential("id", "pass".toCharArray()));

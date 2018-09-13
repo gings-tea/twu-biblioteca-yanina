@@ -85,6 +85,8 @@ public class LibraryManager {
         checkedOutBooks.put(new Book("Java", "Kathy Sierra", 2001),"111-1113");
 
         availableMovies = new ArrayList<>();
+        availableMovies.add(new Movie("The Godfather", "Coppola", 1972, "9.2"));
+        availableMovies.add(new Movie("Gone Girl", "David Fincher", 2014, "8..1"));
         
     }
 }

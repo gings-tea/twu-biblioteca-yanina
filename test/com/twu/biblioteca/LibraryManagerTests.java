@@ -31,7 +31,7 @@ public class LibraryManagerTests {
         checkedOutBooks.put(new Book("Harry Potter", "J K Rowling", 2000),"111-1111");
         checkedOutBooks.put(new Book("Java", "Kathy Sierra", 2001),"111-1111");
 
-        availableMovies.add(new Movie("Interstellar", "Christopher Nolan",2014,10));
+        availableMovies.add(new Movie("Interstellar", "Christopher Nolan",2014,"8.2"));
         libraryManager = new LibraryManager(availableBooks,checkedOutBooks,availableMovies);
         System.setOut(new PrintStream(outContent));
         loggedUser = "111-1111";
@@ -84,7 +84,7 @@ public class LibraryManagerTests {
     @Test
     public void getMovieDetailsShowsOnlyAvailableMovies() {
         libraryManager.getAvailableMovieDetails("%s\t%s\t%s\t%s\n");
-        assertEquals("Interstellar\tChristopher Nolan\t2014\t10\n", outContent.toString());
+        assertEquals("Interstellar\tChristopher Nolan\t2014\t8.2\n", outContent.toString());
     }
 
 }
