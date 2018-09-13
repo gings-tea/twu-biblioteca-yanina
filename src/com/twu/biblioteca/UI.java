@@ -93,6 +93,12 @@ class UI {
         System.out.println("You're not logged");
     }
 
+    public void showNotCorrectOptionMsg(){
+        System.out.println();
+        System.out.println("Select a valid option!");
+        System.out.println();
+    }
+
     private void showOptionsIfLoggedOrNot(boolean isLogged){
         if(isLogged){
             System.out.print(commonOptions + "Log out\n7) See your contact information\nPlease enter an option or enter Q to quit: ");

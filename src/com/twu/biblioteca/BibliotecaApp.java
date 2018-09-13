@@ -51,13 +51,14 @@ public class BibliotecaApp {
                     if (isLogged){
                         ui.showUserDetails(userManager, loggedUserID);
                     }
+                    else {
+                        ui.showNotCorrectOptionMsg();
+                    }
                     break;
                 case "q":
                     break;
                 default:
-                    System.out.println();
-                    System.out.println("Select a valid option!");
-                    System.out.println();
+                    ui.showNotCorrectOptionMsg();
             }
         } while(ui.isNotQuitting(optionSelected));
     }
