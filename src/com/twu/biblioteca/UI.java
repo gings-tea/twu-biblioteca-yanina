@@ -101,4 +101,9 @@ class UI {
             System.out.print(commonOptions + "Log In\nPlease enter an option or enter Q to quit: ");
         }
     }
+
+    public void showUserDetails(UserManager userManager, String loggedUserID) {
+        System.out.printf("Name: %-30s\nEmail: %-30s\nPhone: %-30s", userManager.getUserDetailsByID(loggedUserID));
+
+    }
 }

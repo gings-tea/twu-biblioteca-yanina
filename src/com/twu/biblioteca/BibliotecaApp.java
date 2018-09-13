@@ -47,6 +47,10 @@ public class BibliotecaApp {
                     loggedUserID = getLoggedUserID();
                     setLoggedState(loggedUserID);
                     break;
+                case "7":
+                    if (isLogged){
+                        ui.showUserDetails(userManager, loggedUserID);
+                    }
                 case "q":
                     break;
                 default:
