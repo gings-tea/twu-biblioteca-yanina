@@ -27,7 +27,7 @@ public class LibraryMainFlow {
         String optionSelected;
         do{
             optionSelected = ui.getOption(isLogged);
-            switch(optionSelected){
+            switch(optionSelected.toLowerCase()){
                 case "1":
                     ui.listAllBooks(libraryManager);
                     break;
