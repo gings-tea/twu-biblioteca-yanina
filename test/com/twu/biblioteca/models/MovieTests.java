@@ -2,9 +2,8 @@ package com.twu.biblioteca.models;
 
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertFalse;
+import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.*;
 
 public class MovieTests {
     @Test
@@ -15,10 +14,10 @@ public class MovieTests {
 
     @Test
     public void compareTwoEqualMoviesShouldReturnTrue() {
-        assertTrue(new Movie("movie", "director", 2000).equals(new Movie("movie", "director", 2000)));
+        assertEquals(new Movie("movie", "director", 2000), new Movie("movie", "director", 2000));
     }
     @Test
     public void compareTwoDifferentMoviesShouldReturnFalse() {
-        assertFalse(new Movie("movie", "director", 2000).equals(new Movie("movie", "director", 1000,"1")));
+        assertNotEquals(new Movie("movie", "director", 2000), new Movie("movie", "director", 1000, "1"));
     }
 }
