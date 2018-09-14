@@ -148,4 +148,8 @@ class UI {
     public void showErrorMovieCheckOut() {
         System.out.println("That movie is not available.");
     }
+
+    public void printLogInFirst() {
+        System.out.println("Please log in first");
+    }
 }
