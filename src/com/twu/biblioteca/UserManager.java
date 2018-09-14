@@ -6,7 +6,7 @@ import com.twu.biblioteca.models.User;
 import java.util.ArrayList;
 
 public class UserManager {
-    public static final String NO_USER = "";
+    public final String NO_USER = "";
     private ArrayList<User> registerUsers;
 
     public UserManager() {

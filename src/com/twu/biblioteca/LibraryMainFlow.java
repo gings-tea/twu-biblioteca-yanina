@@ -3,8 +3,8 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.models.AbstractLibraryItem;
 
 public class LibraryMainFlow {
-    public static final String BOOK = "book";
-    public static final String MOVIE = "movie";
+    private static final String BOOK = "book";
+    private static final String MOVIE = "movie";
     private boolean isLogged;
     private String loggedUserID;
     private LibraryManager libraryManager;
@@ -32,10 +32,10 @@ public class LibraryMainFlow {
                     ui.listAllBooks(libraryManager);
                     break;
                 case "2":
-                    checkIfLoggedToModifyAvailabilityOfItem(false, BOOK);
+                    checkIfLoggedToModifyAvailabilityOfBook(false);
                     break;
                 case "3":
-                    checkIfLoggedToModifyAvailabilityOfItem(true, BOOK);
+                    checkIfLoggedToModifyAvailabilityOfBook(true);
                     break;
                 case "4":
                     ui.listAllMovies(libraryManager);
@@ -81,9 +81,9 @@ public class LibraryMainFlow {
         }
     }
 
-    private void checkIfLoggedToModifyAvailabilityOfItem(boolean isReturning, String type) {
+    private void checkIfLoggedToModifyAvailabilityOfBook(boolean isReturning) {
         if (isLogged)
-            modifyAvailabilityOfItem(isReturning, type);
+            modifyAvailabilityOfItem(isReturning, BOOK);
         else
             ui.printLogInFirst();
     }
