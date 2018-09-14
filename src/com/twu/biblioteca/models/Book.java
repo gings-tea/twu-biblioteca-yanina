@@ -1,6 +1,6 @@
 package com.twu.biblioteca.models;
 
-public class Book {
+public class Book extends AbstractLibraryItem {
 
     private String title;
     private String author;
@@ -10,9 +10,11 @@ public class Book {
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.type = "book";
     }
 
-    public String[] bookDetails(){
+    @Override
+    public String[] getDetails(){
         return new String[]{title, author, String.valueOf(yearPublished)};
     }
 

@@ -77,13 +77,13 @@ public class LibraryManagerTests {
 
     @Test
     public void getBookDetailsShowsOnlyAvailableBooks() {
-        libraryManager.getAvailableBookDetails("%s\t%s\t%s\n");
+        libraryManager.getAvailableBookDetails("book", "%s\t%s\t%s\n");
         assertEquals("TDD\tKent Beck\t2003\n", outContent.toString());
     }
 
     @Test
     public void getMovieDetailsShowsOnlyAvailableMovies() {
-        libraryManager.getAvailableMovieDetails("%s\t%s\t%s\t%s\n");
+        libraryManager.getAvailableMovieDetails("movie", "%s\t%s\t%s\t%s\n");
         assertEquals("Interstellar\tChristopher Nolan\t2014\t8.2\n", outContent.toString());
     }
 

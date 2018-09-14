@@ -1,6 +1,6 @@
 package com.twu.biblioteca.models;
 
-public class Movie {
+public class Movie extends AbstractLibraryItem {
     private String name;
     private String director;
     private int year;
@@ -11,6 +11,7 @@ public class Movie {
         this.director = director;
         this.year = year;
         this.rate = rate;
+        this.type = "movie";
     }
 
     public Movie(String name, String director, int year) {
@@ -18,10 +19,7 @@ public class Movie {
         this.director = director;
         this.year = year;
         rate = "unrated";
-    }
-
-    public String[] movieDetails(){
-        return new String[]{name, director, String.valueOf(year), rate};
+        this.type = "movie";
     }
 
     @Override
@@ -35,5 +33,10 @@ public class Movie {
 
     public int hashCode() {
         return 0;
+    }
+
+    @Override
+    public String[] getDetails() {
+        return new String[]{name, director, String.valueOf(year), rate};
     }
 }

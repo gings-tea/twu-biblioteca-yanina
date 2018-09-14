@@ -41,14 +41,14 @@ class UI {
         System.out.println();
         System.out.println("Available books");
         System.out.printf(formatBook,"Title","Author","Year Published");
-        libraryManager.getAvailableBookDetails(formatBook);
+        libraryManager.getAvailableBookDetails("book",formatBook);
     }
 
     public void listAllMovies(LibraryManager libraryManager){
         System.out.println();
         System.out.println("Available movies");
         System.out.printf(formatMovie,"Name", "Director", "Year", "Rate");
-        libraryManager.getAvailableMovieDetails(formatMovie);
+        libraryManager.getAvailableMovieDetails("movie", formatMovie);
     }
 
     public Book enterLibraryBookInformation(){

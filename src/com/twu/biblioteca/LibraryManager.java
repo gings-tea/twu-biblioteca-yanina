@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.models.AbstractLibraryItem;
 import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.Movie;
 
@@ -7,25 +8,26 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class LibraryManager {
-    private Hashtable<Book, String> checkedOutBooks;
-    private ArrayList<Book> availableBooks;
 
     private ArrayList<Movie> availableMovies;
     private ArrayList<Movie> checkedOutMovies;
+
+    private ArrayList<AbstractLibraryItem> availableItems;
+    private Hashtable<AbstractLibraryItem, String> checkedOutItems;
 
     public LibraryManager() {
         fillLibraryItems();
     }
 
     public LibraryManager(ArrayList availableBooks, Hashtable checkedOutBooks, ArrayList availableMovies){
-        this.availableBooks = availableBooks;
-        this.checkedOutBooks = checkedOutBooks;
         this.availableMovies = availableMovies;
+        availableItems = availableBooks;
+        checkedOutItems = checkedOutBooks;
         checkedOutMovies = new ArrayList<>();
     }
 
-    public boolean isBookInLibraryAvailable(Book book) {
-        return availableBooks.contains(book);
+    public boolean isBookInLibraryAvailable(AbstractLibraryItem item) {
+        return availableItems.contains(item);
     }
 
 
@@ -33,46 +35,47 @@ public class LibraryManager {
         return availableMovies.contains(movie);
     }
 
-    public boolean changeBookAvailability(Book book, boolean returning, String libraryId) {
+    public boolean changeBookAvailability(AbstractLibraryItem item, boolean returning, String libraryId) {
         boolean changed;
         if(returning){
-            changed = returnBook(book);
+            changed = returnBook(item);
         } else {
-            changed = checkOutBook(book,libraryId);
+            changed = checkOutBook(item,libraryId);
         }
         return changed;
     }
 
-    public void getAvailableBookDetails(String format) {
-        for(Book book: availableBooks) {
-            System.out.printf(format, book.bookDetails());
+    public void getAvailableBookDetails(String type, String format) {
+        for(AbstractLibraryItem item: availableItems) {
+            if(item.isSameType(type))
+                System.out.printf(format, item.getDetails());
         }
     }
 
 
-    public void getAvailableMovieDetails(String format) {
+    public void getAvailableMovieDetails(String type, String format) {
         for(Movie movie: availableMovies) {
-            System.out.printf(format, movie.movieDetails());
+            System.out.printf(format, movie.getDetails());
         }
     }
 
-    private boolean isBookInLibraryNotAvailable(Book book){
-        return checkedOutBooks.containsKey(book);
+    private boolean isBookInLibraryNotAvailable(AbstractLibraryItem item){
+        return checkedOutItems.containsKey(item);
     }
 
-    private boolean returnBook(Book book) {
-        if(isBookInLibraryNotAvailable(book)){
-            checkedOutBooks.remove(book);
-            availableBooks.add(book);
+    private boolean returnBook(AbstractLibraryItem item) {
+        if(isBookInLibraryNotAvailable(item)){
+            checkedOutItems.remove(item);
+            availableItems.add(item);
             return true;
         }
         return false;
     }
 
-    private boolean checkOutBook(Book book, String libraryId) {
-        if(isBookInLibraryAvailable(book)){
-            availableBooks.remove(book);
-            checkedOutBooks.put(book, libraryId);
+    private boolean checkOutBook(AbstractLibraryItem item, String libraryId) {
+        if(isBookInLibraryAvailable(item)){
+            availableItems.remove(item);
+            checkedOutItems.put(item, libraryId);
             return true;
         }
         return false;
@@ -89,15 +92,15 @@ public class LibraryManager {
 
     private void fillLibraryItems(){
 
-        availableBooks = new ArrayList<>();
-        availableBooks.add(new Book("TDD", "Kent Beck", 2003));
-        availableBooks.add(new Book("Crime and Punishment", "Fyodor Dostoyevsky", 1935));
+        availableItems = new ArrayList<>();
+        availableItems.add(new Book("TDD", "Kent Beck", 2003));
+        availableItems.add(new Book("Crime and Punishment", "Fyodor Dostoyevsky", 1935));
 
-        checkedOutBooks = new Hashtable<>();
+        checkedOutItems = new Hashtable<>();
 
-        checkedOutBooks.put(new Book("Go in Action", "William Kennedy", 2010),"111-1111");
-        checkedOutBooks.put(new Book("Harry Potter I", "J K Rowling", 2000),"111-1112");
-        checkedOutBooks.put(new Book("Java", "Kathy Sierra", 2001),"111-1113");
+        checkedOutItems.put(new Book("Go in Action", "William Kennedy", 2010),"111-1111");
+        checkedOutItems.put(new Book("Harry Potter I", "J K Rowling", 2000),"111-1112");
+        checkedOutItems.put(new Book("Java", "Kathy Sierra", 2001),"111-1113");
 
         availableMovies = new ArrayList<>();
         availableMovies.add(new Movie("The Godfather", "Coppola", 1972, "9.2"));
