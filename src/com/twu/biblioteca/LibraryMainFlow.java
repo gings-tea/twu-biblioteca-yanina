@@ -5,6 +5,7 @@ import com.twu.biblioteca.models.AbstractLibraryItem;
 public class LibraryMainFlow {
     private static final String NO_USER = "";
     public static final String BOOK = "book";
+    public static final String MOVIE = "movie";
     private boolean isLogged;
     private String loggedUserID;
     private LibraryManager libraryManager;
@@ -41,7 +42,7 @@ public class LibraryMainFlow {
                     ui.listAllMovies(libraryManager);
                     break;
                 case "5":
-                    modifyAvailabilityOfItem(false, "movie");
+                    modifyAvailabilityOfItem(false, MOVIE);
                     break;
                 case "6":
                     loggedUserID = getLoggedUserID();

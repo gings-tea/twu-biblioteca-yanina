@@ -74,9 +74,9 @@ public class LibraryManager {
 
         checkedOutItems = new Hashtable<>();
 
-        checkedOutItems.put(new Book("Go in Action", "William Kennedy", 2010),"111-1111");
-        checkedOutItems.put(new Book("Harry Potter I", "J K Rowling", 2000),"111-1112");
-        checkedOutItems.put(new Book("Java", "Kathy Sierra", 2001),"111-1113");
+        checkedOutItems.put(new Book("Go in Action", "William Kennedy", 2010),"123-4567");
+        checkedOutItems.put(new Book("Harry Potter I", "J K Rowling", 2000),"123-4567");
+        checkedOutItems.put(new Book("Java", "Kathy Sierra", 2001),"987-6543");
 
     }
 }
