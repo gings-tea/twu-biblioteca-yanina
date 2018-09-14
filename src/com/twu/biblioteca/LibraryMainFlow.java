@@ -67,7 +67,7 @@ public class LibraryMainFlow {
         if (isLogged)
             return userManager.NO_USER;
         else
-            return ui.getLogInCredentials(userManager);
+            return ui.enterCredentialToGetID(userManager);
     }
 
     private void setLoggedState(String userIdLogged) {

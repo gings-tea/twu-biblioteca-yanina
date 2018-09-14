@@ -65,7 +65,6 @@ public class LibraryManager {
     }
 
     private void fillLibraryItems(){
-
         availableItems = new ArrayList<>();
         availableItems.add(new Book("TDD", "Kent Beck", 2003));
         availableItems.add(new Book("Crime and Punishment", "Fyodor Dostoyevsky", 1935));
@@ -77,6 +76,5 @@ public class LibraryManager {
         checkedOutItems.put(new Book("Go in Action", "William Kennedy", 2010),"123-4567");
         checkedOutItems.put(new Book("Harry Potter I", "J K Rowling", 2000),"123-4567");
         checkedOutItems.put(new Book("Java", "Kathy Sierra", 2001),"987-6543");
-
     }
 }

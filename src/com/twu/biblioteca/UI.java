@@ -27,7 +27,7 @@ class UI {
         return sc.nextLine();
     }
 
-    public String getLogInCredentials(UserManager userManager){
+    public String enterCredentialToGetID(UserManager userManager){
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.print("Please enter your library ID: ");
