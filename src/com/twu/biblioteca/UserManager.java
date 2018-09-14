@@ -6,6 +6,7 @@ import com.twu.biblioteca.models.User;
 import java.util.ArrayList;
 
 public class UserManager {
+    public static final String NO_USER = "";
     private ArrayList<User> registerUsers;
 
     public UserManager() {
@@ -17,7 +18,7 @@ public class UserManager {
     }
 
     public String loginUser(Credential enteredCredentials) {
-        String id = "";
+        String id = NO_USER;
         for(User u: registerUsers){
             if(u.isCredentialCorrect(enteredCredentials)){
                 id = enteredCredentials.getLibraryNumber();

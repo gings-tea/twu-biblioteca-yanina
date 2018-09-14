@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.models.AbstractLibraryItem;
 
 public class LibraryMainFlow {
-    private static final String NO_USER = "";
     public static final String BOOK = "book";
     public static final String MOVIE = "movie";
     private boolean isLogged;
@@ -66,13 +65,13 @@ public class LibraryMainFlow {
 
     private String getLoggedUserID() {
         if (isLogged)
-            return NO_USER;
+            return userManager.NO_USER;
         else
             return ui.getLogInCredentials(userManager);
     }
 
     private void setLoggedState(String userIdLogged) {
-        if(userIdLogged.equals(NO_USER)){
+        if(userIdLogged.equals(userManager.NO_USER)){
             isLogged = false;
             ui.showNotLogged();
         }
