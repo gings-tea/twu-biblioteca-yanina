@@ -31,16 +31,10 @@ public class LibraryMainFlow {
                     ui.listAllBooks(libraryManager);
                     break;
                 case "2":
-                    if(isLogged)
-                        modifyAvailabilityOfBook(false);
-                    else
-                        ui.printLogInFirst();
+                    checkIfLoggedToModifyAvailabilityOfBook(false);
                     break;
                 case "3":
-                    if(isLogged)
-                        modifyAvailabilityOfBook(true);
-                    else
-                        ui.printLogInFirst();
+                    checkIfLoggedToModifyAvailabilityOfBook(true);
                     break;
                 case "4":
                     ui.listAllMovies(libraryManager);
@@ -68,6 +62,13 @@ public class LibraryMainFlow {
         } while(ui.isNotQuitting(optionSelected));
     }
 
+    private void checkIfLoggedToModifyAvailabilityOfBook(boolean availability) {
+        if (isLogged)
+            modifyAvailabilityOfBook(availability);
+        else
+            ui.printLogInFirst();
+    }
+
     private void checkOutMovie() {
         Movie movie = ui.enterMovieInformation();
         if(libraryManager.checkOutMovie(movie)){
@@ -76,7 +77,6 @@ public class LibraryMainFlow {
         else{
             ui.showErrorMovieCheckOut();
         }
-
     }
 
     private String getLoggedUserID() {
