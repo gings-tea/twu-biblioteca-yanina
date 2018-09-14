@@ -9,9 +9,6 @@ import java.util.Hashtable;
 
 public class LibraryManager {
 
-    private ArrayList<Movie> availableMovies;
-    private ArrayList<Movie> checkedOutMovies;
-
     private ArrayList<AbstractLibraryItem> availableItems;
     private Hashtable<AbstractLibraryItem, String> checkedOutItems;
 
@@ -19,52 +16,38 @@ public class LibraryManager {
         fillLibraryItems();
     }
 
-    public LibraryManager(ArrayList availableBooks, Hashtable checkedOutBooks, ArrayList availableMovies){
-        this.availableMovies = availableMovies;
-        availableItems = availableBooks;
-        checkedOutItems = checkedOutBooks;
-        checkedOutMovies = new ArrayList<>();
+    public LibraryManager(ArrayList availableItems, Hashtable checkedOutItems){
+        this.availableItems = availableItems;
+        this.checkedOutItems = checkedOutItems;
     }
 
-    public boolean isBookInLibraryAvailable(AbstractLibraryItem item) {
-        return availableItems.contains(item);
-    }
-
-
-    public boolean isMovieInLibraryAvailable(Movie movie) {
-        return availableMovies.contains(movie);
-    }
-
-    public boolean changeBookAvailability(AbstractLibraryItem item, boolean returning, String libraryId) {
+    public boolean changeItemAvailability(AbstractLibraryItem item, boolean isReturning, String libraryId) {
         boolean changed;
-        if(returning){
-            changed = returnBook(item);
+        if(isReturning){
+            changed = returnItem(item);
         } else {
-            changed = checkOutBook(item,libraryId);
+            changed = checkOutItem(item, libraryId);
         }
         return changed;
     }
 
-    public void getAvailableBookDetails(String type, String format) {
+    public void getAvailableItemsDetails(String type, String format) {
         for(AbstractLibraryItem item: availableItems) {
             if(item.isSameType(type))
                 System.out.printf(format, item.getDetails());
         }
     }
 
-
-    public void getAvailableMovieDetails(String type, String format) {
-        for(Movie movie: availableMovies) {
-            System.out.printf(format, movie.getDetails());
-        }
+    public boolean isItemInLibraryAvailable(AbstractLibraryItem item) {
+        return availableItems.contains(item);
     }
 
-    private boolean isBookInLibraryNotAvailable(AbstractLibraryItem item){
+    private boolean isItemInLibraryNotAvailable(AbstractLibraryItem item){
         return checkedOutItems.containsKey(item);
     }
 
-    private boolean returnBook(AbstractLibraryItem item) {
-        if(isBookInLibraryNotAvailable(item)){
+    private boolean returnItem(AbstractLibraryItem item) {
+        if(isItemInLibraryNotAvailable(item)){
             checkedOutItems.remove(item);
             availableItems.add(item);
             return true;
@@ -72,19 +55,10 @@ public class LibraryManager {
         return false;
     }
 
-    private boolean checkOutBook(AbstractLibraryItem item, String libraryId) {
-        if(isBookInLibraryAvailable(item)){
+    private boolean checkOutItem(AbstractLibraryItem item, String libraryId) {
+        if(isItemInLibraryAvailable(item)){
             availableItems.remove(item);
             checkedOutItems.put(item, libraryId);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean checkOutMovie(Movie movie) {
-        if(isMovieInLibraryAvailable(movie)){
-            availableMovies.remove(movie);
-            checkedOutMovies.add(movie);
             return true;
         }
         return false;
@@ -95,18 +69,14 @@ public class LibraryManager {
         availableItems = new ArrayList<>();
         availableItems.add(new Book("TDD", "Kent Beck", 2003));
         availableItems.add(new Book("Crime and Punishment", "Fyodor Dostoyevsky", 1935));
+        availableItems.add(new Movie("The Godfather", "Coppola", 1972, "9.2"));
+        availableItems.add(new Movie("Gone Girl", "David Fincher", 2014, "8.1"));
 
         checkedOutItems = new Hashtable<>();
 
         checkedOutItems.put(new Book("Go in Action", "William Kennedy", 2010),"111-1111");
         checkedOutItems.put(new Book("Harry Potter I", "J K Rowling", 2000),"111-1112");
         checkedOutItems.put(new Book("Java", "Kathy Sierra", 2001),"111-1113");
-
-        availableMovies = new ArrayList<>();
-        availableMovies.add(new Movie("The Godfather", "Coppola", 1972, "9.2"));
-        availableMovies.add(new Movie("Gone Girl", "David Fincher", 2014, "8..1"));
-
-        checkedOutMovies = new ArrayList<>();
 
     }
 }

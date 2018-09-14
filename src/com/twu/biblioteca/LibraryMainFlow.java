@@ -1,9 +1,10 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.models.Book;
-import com.twu.biblioteca.models.Movie;
+import com.twu.biblioteca.models.AbstractLibraryItem;
 
 public class LibraryMainFlow {
+    private static final String NO_USER = "";
+    public static final String BOOK = "book";
     private boolean isLogged;
     private String loggedUserID;
     private LibraryManager libraryManager;
@@ -31,16 +32,16 @@ public class LibraryMainFlow {
                     ui.listAllBooks(libraryManager);
                     break;
                 case "2":
-                    checkIfLoggedToModifyAvailabilityOfBook(false);
+                    checkIfLoggedToModifyAvailabilityOfItem(false, BOOK);
                     break;
                 case "3":
-                    checkIfLoggedToModifyAvailabilityOfBook(true);
+                    checkIfLoggedToModifyAvailabilityOfItem(true, BOOK);
                     break;
                 case "4":
                     ui.listAllMovies(libraryManager);
                     break;
                 case "5":
-                    checkOutMovie();
+                    modifyAvailabilityOfItem(false, "movie");
                     break;
                 case "6":
                     loggedUserID = getLoggedUserID();
@@ -62,32 +63,15 @@ public class LibraryMainFlow {
         } while(ui.isNotQuitting(optionSelected));
     }
 
-    private void checkIfLoggedToModifyAvailabilityOfBook(boolean availability) {
-        if (isLogged)
-            modifyAvailabilityOfBook(availability);
-        else
-            ui.printLogInFirst();
-    }
-
-    private void checkOutMovie() {
-        Movie movie = ui.enterMovieInformation();
-        if(libraryManager.checkOutMovie(movie)){
-            ui.showSuccessMovieCheckOut();
-        }
-        else{
-            ui.showErrorMovieCheckOut();
-        }
-    }
-
     private String getLoggedUserID() {
         if (isLogged)
-            return "";
+            return NO_USER;
         else
             return ui.getLogInCredentials(userManager);
     }
 
     private void setLoggedState(String userIdLogged) {
-        if(userIdLogged.isEmpty()){
+        if(userIdLogged.equals(NO_USER)){
             isLogged = false;
             ui.showNotLogged();
         }
@@ -97,12 +81,27 @@ public class LibraryMainFlow {
         }
     }
 
-    private void modifyAvailabilityOfBook(boolean availability) {
-        Book book = ui.enterLibraryBookInformation();
-        if (libraryManager.changeBookAvailability(book, availability,loggedUserID)){
-            ui.printSuccess(availability);
+    private void checkIfLoggedToModifyAvailabilityOfItem(boolean isReturning, String type) {
+        if (isLogged)
+            modifyAvailabilityOfItem(isReturning, type);
+        else
+            ui.printLogInFirst();
+    }
+
+    private void modifyAvailabilityOfItem(boolean isReturning, String type) {
+        AbstractLibraryItem item = getLibraryItemByType(type);
+        if (libraryManager.changeItemAvailability(item, isReturning, loggedUserID)){
+            ui.printSuccess(isReturning, type);
         } else {
-            ui.printError(availability);
+            ui.printError(isReturning, type);
+        }
+    }
+
+    private AbstractLibraryItem getLibraryItemByType(String type){
+        if(type.equals(BOOK)){
+            return ui.enterLibraryBookInformation();
+        }else {
+            return ui.enterMovieInformation();
         }
     }
 }

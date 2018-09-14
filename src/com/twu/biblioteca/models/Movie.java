@@ -24,7 +24,15 @@ public class Movie extends AbstractLibraryItem {
 
     @Override
     public boolean equals(Object otherMovie){
-        Movie movie = (Movie) otherMovie;
+        AbstractLibraryItem movie = (AbstractLibraryItem) otherMovie;
+        if(movie.isSameType(this.type)){
+            return isEqualContent((Movie) movie);
+
+        }
+        return false;
+    }
+
+    private boolean isEqualContent(Movie movie){
         return this.name.equals(movie.name)  &&
                 this.year == movie.year &&
                 this.director.equals(movie.director) &&

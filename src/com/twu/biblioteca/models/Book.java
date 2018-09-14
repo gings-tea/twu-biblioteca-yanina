@@ -20,7 +20,15 @@ public class Book extends AbstractLibraryItem {
 
     @Override
     public boolean equals(Object otherBook){
-        Book book = (Book) otherBook;
+        AbstractLibraryItem book = (AbstractLibraryItem) otherBook;
+        if(book.isSameType(this.type)){
+            return isEqualContent((Book) book);
+
+        }
+        return false;
+    }
+
+    private boolean isEqualContent(Book book){
         return this.title.equals(book.title)  &&
                 this.yearPublished == book.yearPublished &&
                 this.author.equals(book.author) ;
